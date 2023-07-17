@@ -1,4 +1,5 @@
 import React from "react";
+import './Content.scss';
 import {FaPlay} from 'react-icons/fa';
 
 const Content = () => {
@@ -13,6 +14,14 @@ const Content = () => {
           <p>[ ko; ]</p>
         </div>
         <button className='play-btn'><FaPlay/></button>
+      </div>
+      <div className="second-part">
+          <b>Noun</b>
+          <h3>Meaning</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, quisquam.</p>
+      </div>
+      <div className='synonims'>
+          <p><b>Synonims:</b> Lorem ipsum dolor sit amet.</p>
       </div>
     </div>
   );
