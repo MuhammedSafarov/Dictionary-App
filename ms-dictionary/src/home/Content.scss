@@ -1,7 +1,38 @@
-.home-content{
-    .form{
-        .search{
-            width: 100%;
-        }
+.home-content {
+  form {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    .search-input {
+      padding: 8px;
+      border-radius: 7px;
+      border: 1px solid orange;
+      width: 100%;
+      padding-left: 2.5rem;
+      font-size: 17px;
+      background-color: transparent;
+      color: white;
     }
+    .search-btn {
+      border: none;
+      position: absolute;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .search-icon {
+        width: 18px;
+        height: 18px;
+        color: white;
+        padding: 5px;
+      }
+      .search-icon:hover {
+        color: orange;
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+      }
+    }
+  }
 }
