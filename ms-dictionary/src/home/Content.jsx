@@ -17,13 +17,14 @@ const Content = () => {
   };
 
   console.log(searchedKeyWord);
+
   return (
     <div className="home-content">
       <form onSubmit={findWord}>
         <input
           type="text"
           className="search-input"
-          placeholder="Search ..."
+          placeholder="Search word..."
           onChange={(e) => setKeyWord(e.target.value.toString())}
         />
         <button className="search-btn">
@@ -31,26 +32,41 @@ const Content = () => {
         </button>
       </form>
       <div className="first-part">
+        <h3>{searchedKeyWord?.word}</h3>
         <div>
-          <h3>{searchedKeyWord?.word}</h3>
-          <p>{searchedKeyWord?.phonetic}</p>
+          {searchedKeyWord?.phonetics?.map((el) => {
+            return (
+              <div key={el?.id}>
+                <b>{el?.id + 1}</b>
+                <p>{el?.text}</p>
+                <button className="play-btn">
+                  <a href={el?.audio}>
+                    <FaPlay className="play-icon" />
+                  </a>
+                </button>
+              </div>
+            );
+          })}
         </div>
-        <button className="play-btn">
-          <FaPlay />
-        </button>
       </div>
       <div className="second-part">
-        {/* <b>{searchedKeyWord?.meanings[0]?.definitions[0]}</b> */}
-        <h3>Meaning</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-          quisquam.
-        </p>
-      </div>
-      <div className="synonims">
-        <p>
-          <b>Synonims:</b> Lorem ipsum dolor sit amet.
-        </p>
+        {searchedKeyWord?.meanings?.map((item) => {
+          return (
+            <div key={item.id}>
+              <h3>{item?.partOfSpeech}</h3>
+              <p>
+                <h3>Definitions</h3>
+                {item?.definitions?.map((el) => {
+                  return (
+                    <p key={el.id} className="definition">
+                      {el?.definition}
+                    </p>
+                  );
+                })}
+              </p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
