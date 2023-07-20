@@ -68,10 +68,10 @@
     .definition-box {
       width: 80%;
       margin: 0 auto;
-      margin-top: 1.5rem;
+      margin-top: 1.4rem;
       border-top: 1px solid orange;
       padding: 8px;
-      .partOfSpeech{
+      .partOfSpeech {
         color: orange;
       }
     }
@@ -104,12 +104,12 @@
       }
     }
 
-    .second-part{
-      .definition-box{
-        .partOfSpeech{
+    .second-part {
+      .definition-box {
+        .partOfSpeech {
           font-size: 17px !important;
         }
-        .definition{
+        .definition {
           font-size: 13px !important;
         }
       }
