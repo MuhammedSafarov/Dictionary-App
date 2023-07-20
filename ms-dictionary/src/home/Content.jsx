@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Content.scss";
-import { FaPlay, FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
+import { AiOutlinePlayCircle } from "react-icons/ai";
 import axios from "axios";
 
 const Content = () => {
@@ -31,34 +32,36 @@ const Content = () => {
           <FaSearch className="search-icon" />
         </button>
       </form>
+
       <div className="first-part">
-        <h3>{searchedKeyWord?.word}</h3>
-        <div>
+        <h1 className="searched-word">{searchedKeyWord?.word}</h1>
+        <div className="phonetics">
           {searchedKeyWord?.phonetics?.map((el) => {
             return (
-              <div key={el?.id}>
-                <b>{el?.id + 1}</b>
-                <p>{el?.text}</p>
-                <button className="play-btn">
-                  <a href={el?.audio}>
-                    <FaPlay className="play-icon" />
-                  </a>
-                </button>
+              <div className="phonetic-boxes" key={el?.id}>
+                <div className="phonetic-box">
+                  <p className="pronunciation">{el?.text}</p>
+                  <button className="play-btn">
+                    <a href={el?.audio}>
+                      <AiOutlinePlayCircle className="play-icon" />
+                    </a>
+                  </button>
+                </div>
               </div>
             );
           })}
         </div>
       </div>
+
       <div className="second-part">
         {searchedKeyWord?.meanings?.map((item) => {
           return (
-            <div key={item.id}>
-              <h3>{item?.partOfSpeech}</h3>
+            <div className="definition-box" key={item.id}>
+              <h3 className="partOfSpeech">( as {item?.partOfSpeech} )</h3>
               <p>
-                <h3>Definitions</h3>
                 {item?.definitions?.map((el) => {
                   return (
-                    <p key={el.id} className="definition">
+                    <p key={el?.id} className="definition">
                       {el?.definition}
                     </p>
                   );

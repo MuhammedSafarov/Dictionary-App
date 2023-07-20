@@ -35,4 +35,84 @@
       }
     }
   }
+  .first-part {
+    width: 25%;
+    margin: 0 auto;
+    .phonetics {
+      .phonetic-boxes {
+        .phonetic-box {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          .pronunciation {
+            font-size: 18px;
+          }
+          .play-btn {
+            background-color: transparent;
+            border: none;
+            border-radius: 90%;
+            padding-top: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .play-icon {
+              font-size: 2rem;
+              color: orange;
+            }
+          }
+        }
+      }
+    }
+  }
+  .second-part {
+    .definition-box {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 1.5rem;
+      border-top: 1px solid orange;
+      padding: 8px;
+      .partOfSpeech{
+        color: orange;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    form {
+      width: 85%;
+      .search-input {
+        font-size: 14px;
+      }
+    }
+    .first-part {
+      width: 50%;
+      .searched-word {
+        font-size: 20px;
+      }
+      .phonetic-box {
+        .pronunciation {
+          font-size: 15px !important;
+        }
+        .play-btn {
+          .play-icon {
+            font-size: 1.7rem !important;
+          }
+          margin-top: 2px;
+        }
+      }
+    }
+
+    .second-part{
+      .definition-box{
+        .partOfSpeech{
+          font-size: 17px !important;
+        }
+        .definition{
+          font-size: 13px !important;
+        }
+      }
+    }
+  }
 }
